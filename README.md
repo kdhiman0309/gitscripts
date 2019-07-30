@@ -35,7 +35,7 @@ git pullremote
 ```
 
 ### track:
-Extracts track name from branch name. Assumes formats for branch: `scratch/trackname/some_name` and for track: `track/trackname`
+Extracts track name from branch name. Assumes format for branch: `scratch/trackname/some_name` and for track: `track/trackname`
 ```
 git track
 ```
@@ -60,8 +60,8 @@ git newscratchbranch cuties
 ```
 
 ### newpullrequest:
-opens a URL in browser to create a new pull request to merge current_branch into the track
-Use `git track`
+opens a URL in browser to create a new pull request to merge current_branch into the track. Uses `git track`
+</br>
 `<track> <- <current_branch>`
 ```
 git newpullrequest
@@ -73,9 +73,15 @@ commits on the scratch branch off the track. Uses `git track`
 git branchcommits
 ```
 
-### removeuntracked
+### removeuntracked:
 prints out command to clean untracked files
 ```
 git removeuntracked
+```
+
+### rebasebranch:
+Uses `git branchcommits` to count of commits on branch off the track and does `git rebase -i HEAD~n` where `n` is `branch_commits+1`
+```
+git rebasebranch
 ```
 
