@@ -1,0 +1,7 @@
+#!/bin/sh
+git clean -n
+
+echo ""
+echo "to delete run:"
+echo "git clean -f"
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Find which is your current branch
+if currentBranch=$(git symbolic-ref --short -q HEAD)
+then
+  echo On branch $currentBranch
+  echo "Executing: git pull origin $currentBranch"
+  git pull origin $currentBranch
+else
+  echo ERROR: Cannot find the current branch!
+fi

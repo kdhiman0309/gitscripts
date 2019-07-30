@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Find which is your current branch
+if currentBranch=$(git symbolic-ref --short -q HEAD)
+then
+  echo On branch $currentBranch
+  echo Pushing updates from the current branch to remote branch $currentBranch
+
+  # Push the changes to remote branch with current name
+  # If specified a param, check if it was -f to force push.
+  if [ -z "$1" ]
+  then
+    echo "No argument supplied. Continue executing the script normally."
+
+    echo "Executing: git push origin $currentBranch"
+    git push origin $currentBranch
+
+  elif [ $1 == "-f" ] || [ $1 == "--force" ]
+  then
+    echo "Force push requested."
+    echo "Executing: git push -f origin $currentBranch"
+    git push -f origin $currentBranch
+  elif [ $1 == "-u" ]
+  then
+    echo "with -u requested."
+    echo "Executing: git push -u origin $currentBranch"
+    git push -u origin $currentBranch
+ else
+    echo "ERROR: Not a valid argument. Exiting."
+    exit 1
+  fi
+
+  echo Successfully pushed the updates to remote!
+else
+  echo ERROR: Cannot find the current branch!
+fi

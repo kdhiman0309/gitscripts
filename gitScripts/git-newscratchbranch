@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if currentBranch=$(git symbolic-ref --short -q HEAD)
+then
+  track="`echo "$currentBranch" | sed 's/track\///g'| sed 's/scratch\///g' | sed 's/\/.*//g'`"
+  echo On track $track
+  newbranch="scratch/$track/$1"
+  echo Creating new branch $newbranch
+  git branch -m $newbranch
+else
+  echo ERROR: Cannot find the current branch!
+fi
