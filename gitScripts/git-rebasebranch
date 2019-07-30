@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if track="`git track`"
+then
+  lastCommit="`git branchcommits | wc -l`"
+  git rebase -i HEAD~$(($lastCommit+1))
+else
+  echo ERROR: must specify track
+fi
