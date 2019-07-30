@@ -6,7 +6,7 @@ then
   track="`git track`"
   echo On track $track
   echo On branch $currentBranch
-  open "$GITHUB_URL/compare/track/$track...$currentBranch"
+  open "$GITHUB_URL/compare/$track...$currentBranch"
 else
   echo ERROR: Cannot find the current branch!
 fi
