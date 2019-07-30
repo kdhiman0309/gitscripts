@@ -10,50 +10,65 @@ sh setup.sh
 ## Usage
 
 ### pushremote:
-Force push: 
+Force push:
+Does `git push -f origin <current_branch>`
 ```
 git pushremote -f
 ```
 
 Push (1st time): 
+Does `git push -u origin <current_branch>`
 ```
 git pushremote -u
 ```
 
 Just push: 
+Does `git push origin <current_branch>`
 ```
 git pushremote
 ```
 
 ### pullremote:
+Does `git pull origin <current_branch>`
 ```
 git pullremote
 ```
 
-### pulltrack:
+### track:
+Extracts track name from branch name. Assumes formats for branch: `scratch/trackname/some_name` and for track: `track/trackname`
 ```
-git pulltrack
+git track
 ```
 
 ### resethard:
+Hard resets current branch
+Does `git reset --hard origin/<current_branch>`
 ```
 git resethard
 ```
 
+### pulltrack:
+Does `git pull origin <track>`. Check `git track`
+```
+git pulltrack
+```
+
 ### newscratchbranch: 
-(this can figure out track from current branch name; assumes track/orange or scratch/orange/cuties)
+Create new scratch branch of format `scratch/trackname/some_name`. Uses `git track`
 ```
 git newscratchbranch cuties
 ```
 
 ### newpullrequest:
-opens a URL to create a new pull request to merge branch to the track (extracts track name from branch name)
+opens a URL in browser to create a new pull request to merge current_branch into the track
+Use `git track`
+`<track> <- <current_branch>`
 ```
 git newpullrequest
 ```
 
 ### branchcommits:
-commits on the scratch branch off the track (extracts track name from branch name)
+commits on the scratch branch off the track. Uses `git track`
 ```
 git branchcommits
 ```

@@ -3,8 +3,9 @@ GITHUB_URL="`git remote get-url origin |sed -e "s/.git$//g"`"
 
 if currentBranch=$(git symbolic-ref --short -q HEAD)
 then
-  track="`echo "$currentBranch" | sed 's/track\///g'| sed 's/scratch\///g' | sed 's/\/.*//g'`"
+  track="`git track`"
   echo On track $track
+  echo On branch $currentBranch
   open "$GITHUB_URL/compare/track/$track...$currentBranch"
 else
   echo ERROR: Cannot find the current branch!

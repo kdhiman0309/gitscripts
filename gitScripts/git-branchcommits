@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if track="`echo $(git symbolic-ref --short -q HEAD) | sed 's/track\///g'| sed 's/scratch\///g' | sed 's/\/.*//g'`"
+if track="`git track`"
 then
-  git cherry origin/track/$track | sed -e "s/\+ //g"
+  git cherry origin/$track | sed -e "s/\+ //g"
 else
   echo ERROR: must specify track
 fi

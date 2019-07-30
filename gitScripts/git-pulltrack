@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if track="`echo $(git symbolic-ref --short -q HEAD) | sed 's/track\///g'| sed 's/scratch\///g' | sed 's/\/.*//g'`"
+if track="`git track`"
 then
-  echo "Executing: git pull origin track/$track"
+  echo "Executing: git pull origin $track"
   git pull origin track/$track
 else
   echo ERROR: must specify track

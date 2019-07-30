@@ -1,0 +1,4 @@
+#!/bin/sh
+
+track="`echo $(git symbolic-ref --short -q HEAD) | sed 's/track\///g'| sed 's/scratch\///g' | sed 's/\/.*//g'`"
+echo track/$track
