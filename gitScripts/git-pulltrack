@@ -3,7 +3,7 @@
 if track="`git track`"
 then
   echo "Executing: git pull origin $track"
-  git pull origin track/$track
+  git pull origin $track
 else
   echo ERROR: must specify track
 fi
