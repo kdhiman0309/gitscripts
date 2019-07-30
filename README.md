@@ -41,7 +41,26 @@ git resethard
 ```
 
 ### newscratchbranch: 
-(this can figure out track from current branch name; assumes track/orange or scratch/orange/mandarin)
+(this can figure out track from current branch name; assumes track/orange or scratch/orange/cuties)
 ```
-git newscratchbranch mandarin
+git newscratchbranch cuties
 ```
+
+### newpullrequest:
+opens a URL to create a new pull request to merge branch to the track (extracts track name from branch name)
+```
+git newpullrequest
+```
+
+### branchcommits:
+commits on the scratch branch off the track (extracts track name from branch name)
+```
+git branchcommits
+```
+
+### removeuntracked
+prints out command to clean untracked files
+```
+git removeuntracked
+```
+
