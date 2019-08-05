@@ -85,3 +85,10 @@ Uses `git branchcommits` to count of commits on branch off the track and does `g
 git rebasebranch
 ```
 
+### lastcommit:
+Show last commit on a branch and path(optinal). Does `git log -n 1 origin/branch path/`
+```
+git lastcommit <branch> <optional-path>
+```
+
+
