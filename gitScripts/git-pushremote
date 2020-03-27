@@ -8,7 +8,7 @@ then
 
   # Push the changes to remote branch with current name
   # If specified a param, check if it was -f to force push.
-  if [[ $currentBranch == track* ]] || [ $currentBranch = "master" ] || [ $currentBranch = "newyork" ] || [ $currentBranch = "orlando" ] || [ $currentBranch = "paris"]
+  if [[ $currentBranch == track* ]] || [ $currentBranch = "master" ] || [ $currentBranch = "newyork" ] || [ $currentBranch = "orlando" ] || [ $currentBranch = "paris" ]
   then
     echo "Can not push to this branch: $currentBranch";
   elif [ -z "$1" ]
