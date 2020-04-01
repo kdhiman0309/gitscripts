@@ -1,0 +1,10 @@
+#!/bin/sh
+GITHUB_URL="`git remote get-url origin |sed -e "s/.git$//g"`"
+
+if currentBranch=$(git symbolic-ref --short -q HEAD)
+then
+	open "$GITHUB_URL/pulls?q=head:${currentBranch}"        	
+else
+  echo ERROR: Cannot find the current branch!
+fi
+
