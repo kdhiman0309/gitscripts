@@ -47,12 +47,6 @@ Does `git reset --hard origin/<current_branch>`
 git resethard
 ```
 
-### pulltrack:
-Does `git pull origin <track>`. Check `git track`
-```
-git pulltrack
-```
-
 ### newscratchbranch: 
 Create new scratch branch of format `scratch/trackname/some_name`. Uses `git track`
 ```
@@ -61,16 +55,30 @@ git newscratchbranch cuties
 
 ### newpullrequest:
 opens a URL in browser to create a new pull request to merge current_branch into the track. Uses `git track`
-</br>
+<br>
 `<track> <- <current_branch>`
 ```
 git newpullrequest
 ```
 
+### openpullrequest:
+opens pull request(s) matching `head:<current_branch_name>`
+
+```
+git openpullrequest
+```
+e.g.`REPO_URL/pulls?q=head:scratch/track/apples`
+
 ### branchcommits:
 commits on the scratch branch off the track. Uses `git track`
 ```
 git branchcommits
+```
+
+### pulltrack:
+Does `git pull origin <track>`. Check `git track`
+```
+git pulltrack
 ```
 
 ### removeuntracked:
