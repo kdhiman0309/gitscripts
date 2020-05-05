@@ -4,7 +4,7 @@ git-pushremote courtesy: https://github.com/shobhitpuri/git-refresh/blob/master/
 ## Setup Instructions
 Run following (only prints; doesn't modify anything)
 ```
-sh setup.sh
+sh print_setup_instructions.sh
 ```
 
 ## Usage
