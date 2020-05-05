@@ -1,7 +1,8 @@
 #!/bin/sh
 
 track="`echo $(git symbolic-ref --short -q HEAD) | sed 's/track\///g'| sed 's/scratch\///g' | sed 's/\/.*//g'`"
-if [ $track == 'master' ] || [ $track == 'newyork' ] || [ $track == 'orlando' ] || [ $track == 'paris' ]
+if [[ $track == master* ]] || [[ $track == newyork* ]] || \
+	[[ $track == orlando* ]] || [[ $track == paris* ]] || [[ $track == quebec* ]]
 then
  echo $track
 else
